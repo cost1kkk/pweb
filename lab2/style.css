@@ -33,6 +33,7 @@ nav ul li a:hover {
   background-color: #1967be;
 }
 
+/* Home Section */
 #home {
   display: flex;
   align-items: center;
@@ -41,7 +42,7 @@ nav ul li a:hover {
 }
 
 #home img {
-  max-width: 40%;
+  max-width: 80%;
   border-radius: 10px;
   margin-top: 20px;
 }
@@ -54,6 +55,7 @@ nav ul li a:hover {
   margin-top: 20px;
 }
 
+/* Products Section */
 #products {
   display: flex;
   flex-direction: column;
@@ -64,7 +66,6 @@ nav ul li a:hover {
   display: flex;
   align-items: stretch;
   margin-bottom: 20px;
-  min-height: 200px; /* Set a fixed height for consistent alignment */
 }
 
 .product img {
@@ -75,8 +76,11 @@ nav ul li a:hover {
 
 .product-details {
   flex: 1;
+  max-width: 60%; /* Adjust the maximum width as needed */
 }
 
+
+/* About Section */
 section {
   margin: 20px 0;
   background-color: #fff;
@@ -113,4 +117,75 @@ h1, h2, h3 {
 
 .cta-button:hover {
   background-color: #1967be;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Adjusting image sizes */
+  #home img,
+  .product img,
+  #about img,
+  #contact img {
+    width: 100%;
+    max-width: 612px; /* Set maximum width */
+    height: auto;
+  }
+
+  /* Adjusting text sizes */
+  #home h1, #home p,
+  .product-details h2, .product-details p,
+  #about h2, #about p,
+  #contact h2, #contact p {
+    font-size: 16px; /* Adjust font size for readability */
+  }
+
+  /* Mobile-only section */
+  .mobile-only-section {
+    display: block;
+  }
+
+  /* Hide mascot on mobile */
+  #mascot {
+    display: none;
+  }
+}
+
+
+/* Mascot Styles */
+#mascot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  animation: mascotAnimation 4s infinite alternate;
+}
+
+#mascot img {
+  width: 100px;
+  height: auto;
+}
+
+.mascot-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 120%;
+  right: 50%;
+  transform: translateX(50%);
+  padding: 10px;
+  background-color: #4285f4;
+  color: white;
+  border-radius: 5px;
+}
+
+#mascot:hover .mascot-tooltip {
+  display: block;
+}
+
+/* Animation keyframes */
+@keyframes mascotAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
